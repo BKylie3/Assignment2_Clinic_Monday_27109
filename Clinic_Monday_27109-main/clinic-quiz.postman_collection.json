@@ -1,0 +1,310 @@
+{
+  "info": {
+    "name": "Clinic JPA JPQL Quiz",
+    "description": "Clinic JPA & JPQL Quiz collection for BELISHYA RURANGWA Kylie, ID 27109.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "A1 - Patients By Last Name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1014/api/patients/by-last-name?lastName=uwase",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1014",
+          "path": [
+            "api",
+            "patients",
+            "by-last-name"
+          ],
+          "query": [
+            {
+              "key": "lastName",
+              "value": "uwase"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "A2 - Appointments By Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1014/api/appointments/by-status?status=SCHEDULED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1014",
+          "path": [
+            "api",
+            "appointments",
+            "by-status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "SCHEDULED"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "A3 - Appointments Between Dates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1014/api/appointments/between?start=2026-10-01&end=2026-10-31",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1014",
+          "path": [
+            "api",
+            "appointments",
+            "between"
+          ],
+          "query": [
+            {
+              "key": "start",
+              "value": "2026-10-01"
+            },
+            {
+              "key": "end",
+              "value": "2026-10-31"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "A4 - No Double Booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"appointmentDate\": \"2026-10-20\",\n  \"reason\": \"Double booking test\",\n  \"status\": \"CONFIRMED\",\n  \"patient\": {\n    \"id\": 2\n  },\n  \"doctor\": {\n    \"id\": 1\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:1014/api/appointments/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1014",
+          "path": [
+            "api",
+            "appointments",
+            "save"
+          ]
+        }
+      }
+    },
+    {
+      "name": "B1 - Doctors By Specialization",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1014/api/doctors/by-specialization?name=cardiology",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1014",
+          "path": [
+            "api",
+            "doctors",
+            "by-specialization"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "cardiology"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "B2 - Doctors Without Office",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1014/api/doctors/without-office",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1014",
+          "path": [
+            "api",
+            "doctors",
+            "without-office"
+          ]
+        }
+      }
+    },
+    {
+      "name": "B3 - Unused Specializations",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1014/api/specializations/unused",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1014",
+          "path": [
+            "api",
+            "specializations",
+            "unused"
+          ]
+        }
+      }
+    },
+    {
+      "name": "B4 - Patients Of Doctor",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1014/api/patients/of-doctor/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1014",
+          "path": [
+            "api",
+            "patients",
+            "of-doctor",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "C1 - Appointments Per Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1014/api/appointments/stats/by-status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1014",
+          "path": [
+            "api",
+            "appointments",
+            "stats",
+            "by-status"
+          ]
+        }
+      }
+    },
+    {
+      "name": "C2 - Frequent Patients",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1014/api/patients/frequent?min=3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1014",
+          "path": [
+            "api",
+            "patients",
+            "frequent"
+          ],
+          "query": [
+            {
+              "key": "min",
+              "value": "3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "C3 - Busiest Office",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1014/api/offices/busiest",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1014",
+          "path": [
+            "api",
+            "offices",
+            "busiest"
+          ]
+        }
+      }
+    },
+    {
+      "name": "C4 - Cancel Doctor Day",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1014/api/appointments/cancel-day?doctorId=3&date=2026-11-10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1014",
+          "path": [
+            "api",
+            "appointments",
+            "cancel-day"
+          ],
+          "query": [
+            {
+              "key": "doctorId",
+              "value": "3"
+            },
+            {
+              "key": "date",
+              "value": "2026-11-10"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
